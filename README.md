@@ -1,6 +1,6 @@
 ## Calculator_UDC
 
-** Requerimientos de la calculadora **
+**Requerimientos de la calculadora**
 
 - Operaciones básicas entre dos números reales
 - Potencias reales
