@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 double power(double base, double exponent){
 	double result = 1;
@@ -31,9 +32,10 @@ int main(){
 	char operator;
 	char function[100], trash[7];
 
+	do{
 	printf("Ingresa la operación: ");
 	scanf("%s", &function[0]);
-
+	
 	if(function[0] == ':'){
 			sscanf(function, "%c%c%c%c%c%lf%c", &trash[0], &trash[1], &trash[2], &trash[3], &trash[4], &val1, &trash[5]);
 			trash[6] = '\x0';
@@ -50,6 +52,14 @@ int main(){
 				result = val1 + val2;
 				printf("= %lf\n", result);
 			break;
+			case '-':
+				result = val1 - val2;
+				printf("= %lf\n", result);
+			break;
+			default:
+				printf("Operation not regognized... Maybe there are spaces in your input... Try Again\n");
+			break;
+			}
 		}
-	}
+	}while (function[0] != 's');
 }
