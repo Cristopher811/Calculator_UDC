@@ -39,8 +39,6 @@ int main(){
 
 	trash[6] = '\x0';
 
-	printf("%s %lf\n", trash, val1);
-
 	if(strncmp(function, ":sin", 4) == 0){
 		result = sin(val1);
 		printf("= %.12lf\n", result);
