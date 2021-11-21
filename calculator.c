@@ -55,7 +55,7 @@ int main(){
 			case '*':
 			break;
 			default:
-				printf("Operation not regognized... Maybe there are spaces in your input... Try Again\n");
+				printf("Operation not recognized... Maybe there are spaces in your input... Try Again\n");
 			break;
 			}
 		}
