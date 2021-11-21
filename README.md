@@ -10,3 +10,4 @@
 - [	] Guardar en memoria el resultado
 - [	] Perfeccionar el código en general
 - [x] Implementar multiples operaciones hasta que se detenga el programa
+- [	] algo
