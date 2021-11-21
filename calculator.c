@@ -14,7 +14,7 @@ double power(double base, double exponent){
 
 double sin(double x){
 	double factorial = 1, deriv = 1, result = 0;
-	int n, order = 30;
+	int n, order = 20;
 
 	for(n = 0; n < order; n++){
 		if(n) factorial *= n;
@@ -28,7 +28,7 @@ double sin(double x){
 }
 
 int main(){
-	double val1, val2, result;
+	double val1, val2, result, ans;
 	char operator;
 	char function[100], trash[7];
 
@@ -49,12 +49,10 @@ int main(){
 		sscanf(function, "%lf%c%lf", &val1, &operator, &val2);
 		switch (operator){
 			case '+':
-				result = val1 + val2;
-				printf("= %lf\n", result);
 			break;
 			case '-':
-				result = val1 - val2;
-				printf("= %lf\n", result);
+			break;
+			case '*':
 			break;
 			default:
 				printf("Operation not regognized... Maybe there are spaces in your input... Try Again\n");
