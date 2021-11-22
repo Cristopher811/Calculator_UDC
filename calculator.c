@@ -2,6 +2,14 @@
 #include <string.h>
 #include <stdlib.h>
 
+int factorial(int x){
+	int fact = 1;
+
+	for(int i = 1; i <= x; i++){
+		fact = fact * i;
+	}
+	return fact;
+}
 double power(double base, double exponent){
 	double result = 1;
 	int cont;
@@ -44,6 +52,10 @@ int main(){
 			result = sin(val1);
 			printf("= %.12lf\n", result);
 		}
+			if(strncmp(function, ":fac", 4) == 0){
+				result = factorial(val1);
+				printf("= %lf\n", result);
+			}
 	}	
 	else{
 		sscanf(function, "%lf%c%lf", &val1, &operator, &val2);
