@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
+//mucho código
 int factorial(int x){
 	int fact = 1;
 
