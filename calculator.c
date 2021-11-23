@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int factorial(int x){
+long double factorial(long double x){
 	long int fact = 1;
 
 	for(int i = x; i > 1; i--){
