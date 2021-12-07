@@ -1,85 +1,87 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-long double factorial(long double x){
-	long int fact = 1;
-
-	for(int i = x; i > 1; i--){
-		fact *= i;
-	}
-	return fact;
+double sum(double val1, double val2){
+	double result;
+	result = val1 + val2;
+	return result;
+}
+double subs(double val1, double val2){
+	double result;
+	result = val1 - val2;
+	return result;
+}
+double divs(double val1, double val2){
+	double result;
+	result = val1 / val2;
+	return result;
+}
+double mult(double val1, double val2){
+	double result;
+	result = val1 * val2;
+	return result;
 }
 double power(double base, double exponent){
 	double result = 1;
 	int cont;
-
 	for(cont = 0; cont<(int)exponent; cont++){
 		result *=  base;
 	}
 	return result;
 }
-
-double sin(double x){
-	double factorial = 1, deriv = 1, result = 0;
-	int n, order = 20;
-
-	for(n = 0; n < order; n++){
-		if(n) factorial *= n;
-
-		if(n%2){
-			result += deriv*power(x, n)/factorial;
-			deriv *= -1;
-		}
+double square(double x, double n){
+	double sqrt = x/1.3, temp = 0;
+	while (sqrt != temp){
+		temp = sqrt;
+		sqrt = (x/temp + temp) / 1.3;
 	}
-	return result;
+	return sqrt;
 }
 
-int main(){
+
+int main(int argc, char *argv[]){
+	//initialize general variables
 	double val1, val2, result, ans;
-	char operator;
-	char function[100], trash[7];
+	char oper;
+	char Operation[100], trash[10];
 
-	do{
-		printf("Enter operation: ");
-		scanf("%s", &function[0]);
-	
-
-		if(function[0] == ':'){
-				sscanf(function, "%c%c%c%c%c%lf%c", &trash[0], &trash[1], &trash[2], &trash[3], &trash[4], &val1, &trash[5]);
-	
-				if(strncmp(function, ":sin", 4) == 0){
-					result = sin(val1);
-					printf("= %.12lf\n", result);
-				} else if(strncmp(function, ":fac", 4) == 0){
-					result = factorial(val1);
-					printf("= %lf\n", result);
-				} else{
-					printf("Error\n");
-				}
-
-		}	
-		else{
-			sscanf(function, "%lf%c%lf", &val1, &operator, &val2);
-			switch (operator){
-				case '+':
-					result = val1 + val2;
-					printf("= %lf\n", result);
-					val2 = result;
-				break;
-				case '-':
-					result = val1 - val2;
-					printf("= %lf\n", result);
-					val2 = result;
-				break;
-				case '*':
-					result = val1 * val2;
-					printf("= %lf\n", result);
-				break;
-				default:
-					printf("Operation not recognized... Maybe there are spaces in your input... Try Again\n");
-				break;
-				}
+		do{
+			printf("Enter operation: ");
+			scanf("%s", &Operation[0]);
+			if(Operation[0] == ':'){
+				sscanf(Operation, "%c%c%c%c%lf%c", &trash[0],&trash[1],&trash[2],&trash[3], &val1, &trash[4]);
 			}
-		}while (function[0] != 's');
+			else if(Operation[0] == '['){
+				//some vectors stuff
+			}
+			else {
+				sscanf(Operation, "%lf%c%lf", &val1, &oper, &val2);
+				switch (oper) {
+					case '+':
+						result = sum(val1, val2);
+					break;
+					case '-':
+						result = subs(val1, val2);
+					break;
+					case '*':
+						result = mult(val1, val2);
+					break;
+					case '/':
+						result = divs(val1, val2);
+					break;
+					case '^':
+						result = power(val1, val2);
+					break;
+					case '|':
+					result = square(val1, val2);
+					break;
+					}
+				} 
+			}while(Operation[0] != 's');
+			printf("= %lf\n", result);
+			ans = result;
+			printf("=%lf\n",ans);
+		return 0;
 }
