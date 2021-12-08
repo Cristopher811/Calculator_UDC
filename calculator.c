@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
 			scanf("%s", &Operation[0]);
 
 			if(strncmp(Operation, "ans", 3) == 0){//--> ans operations
-				sscanf(Operation, "%c%c%c%c%lf", &trash[0], &trash[1], &trash[2], &oper, &val1);
+				sscanf(Operation, "%c%c%c%c%lf", &trash[0], &trash[1], &trash[2], &oper, &val2);
 					switch (oper) {
 						case '+':
 							result = algeb_sum(ans, val2);
