@@ -130,7 +130,7 @@ int main(int argc, char *argv[]){
 						break;
 					}
 					printf("= (result) %lf\n", result);
-				} 
+				}
 			}while(Operation[0] != 's');
 		return 0;
 }
