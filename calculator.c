@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include "calculator.h"
 #include "src/algebra.h"
 #include "src/vectors.h"
