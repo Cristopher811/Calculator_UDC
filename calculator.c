@@ -48,40 +48,44 @@ int main(int argc, char *argv[]){
 	char Operation[100], trash[10];
 
 		do{
+			ans = result;
 			printf("Enter operation: ");
 			scanf("%s", &Operation[0]);
-			if(Operation[0] == ':'){
-				sscanf(Operation, "%c%c%c%c%lf%c", &trash[0],&trash[1],&trash[2],&trash[3], &val1, &trash[4]);
-			}
+
+			if(strncmp(Operation, "ans", 3) == 0){
+				sscanf(Operation, "%c%c%c%c%lf", &trash[0], &trash[1], &trash[2], &oper, &val1);
+				result = ans + val1;
+				printf("= (ans) %lf\n", result);
+			} else if(Operation[0] == ':'){
+					sscanf(Operation, "%c%c%c%c%lf%c", &trash[0],&trash[1],&trash[2],&trash[3], &val1, &trash[4]);
+				}
 			else if(Operation[0] == '['){
-				//some vectors stuff
-			}
+					//some vectors stuff
+				}
 			else {
-				sscanf(Operation, "%lf%c%lf", &val1, &oper, &val2);
-				switch (oper) {
-					case '+':
-						result = sum(val1, val2);
-					break;
-					case '-':
-						result = subs(val1, val2);
-					break;
-					case '*':
-						result = mult(val1, val2);
-					break;
-					case '/':
-						result = divs(val1, val2);
-					break;
-					case '^':
-						result = power(val1, val2);
-					break;
-					case '|':
-					result = square(val1, val2);
-					break;
+					sscanf(Operation, "%lf%c%lf", &val1, &oper, &val2);
+					switch (oper) {
+						case '+':
+							result = sum(val1, val2);
+						break;
+						case '-':
+							result = subs(val1, val2);
+						break;
+						case '*':
+							result = mult(val1, val2);
+						break;
+						case '/':
+							result = divs(val1, val2);
+						break;
+						case '^':
+							result = power(val1, val2);
+						break;
+						case '|':
+							result = square(val1, val2);
+						break;
 					}
+					printf("= (result)%lf\n", result);
 				} 
 			}while(Operation[0] != 's');
-			printf("= %lf\n", result);
-			ans = result;
-			printf("=%lf\n",ans);
 		return 0;
 }
