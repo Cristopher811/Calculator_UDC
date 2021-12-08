@@ -1,7 +1,7 @@
 #include "algebra.h"
 #include "../calculator.h"
 #include "trigonometrics.h"
-
+#include <stdio.h>
 float sine(float x){
 	float factorial=1, deriv=1, result=0, mod, cont;
 	int n, order=20;

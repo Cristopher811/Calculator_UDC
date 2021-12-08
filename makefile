@@ -5,7 +5,7 @@ OUT = calculator.out
 FLAGS = -W -g
 
 all:
-	gcc $(IN) -o $(OUT)
+	gcc $(IN) -o $(OUT) $(FLAGS)
 
 clean:
 	rm $(OUT)
