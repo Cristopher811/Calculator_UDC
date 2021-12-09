@@ -80,11 +80,11 @@ int main(int argc, char *argv[]){
 					sscanf(Operation, "%c%c%c%c%c%lf%c", &trash[0],&trash[1],&trash[2],&trash[3], &trash[4], &val1, &trash[5]);
 					if(strncmp(Operation, ":lna", 4) == 0){
 						result = ln(val1);
-						printf("%lf\n", result);
+						printf("=(result) %lf\n", result);
 					}
 					if(strncmp(Operation, ":log", 4) == 0){
 						result = loga(val1);
-						printf("%lf\n", result);
+						printf("=(result) %lf\n", result);
 					}
 				}
 			
