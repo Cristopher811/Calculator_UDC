@@ -41,7 +41,7 @@ double algeb_power(double base, double exponent){
     }
     return result;
 }
-double algeb_square(double x, double n){
+double algeb_square(double b, double x){
 	double result = 0;
     double y, step = 1;
 

@@ -5,4 +5,4 @@
 
 double power(double base, double exponent);
 double ln(double x);
-double loga(double b, double a);
+double loga(double a);

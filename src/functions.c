@@ -55,9 +55,10 @@ double ln(double x) //Serie de Maclaurin para logaritmo natural adaptada para |x
     }
 }
 
-double loga(double b, double a) //:functions
+double loga(double a) //:functions
 {
     double step=1, result=0, y;
+    double b = 10;
 
     while (step>TOLERANCE)
     {
