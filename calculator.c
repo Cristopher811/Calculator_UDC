@@ -46,7 +46,7 @@ int main(int argc, char *argv[]){
 							result = algeb_square(ans, val2);
 						break;
 						default:
-							printf("Operation not regonized, type help to view sintax...\n");
+							printf("Operation not recognized, type help to view sintax...\n");
 						break;
 					}
 					printf("= (result) %lf\n", result);
@@ -70,7 +70,7 @@ int main(int argc, char *argv[]){
 							DivVectors(wans,v,w);
 						break;
 						default:
-							printf("Unknown Operation");
+							printf("Unknown Operation\n");
 							exit(0);
 					}
 					PrintVector(w);
@@ -85,6 +85,9 @@ int main(int argc, char *argv[]){
 					if(strncmp(Operation, ":log", 4) == 0){
 						result = loga(val1);
 						printf("=(result) %lf\n", result);
+					}
+					else {
+						printf("Operation not recognized...\n");
 					}
 				}
 			
@@ -106,14 +109,14 @@ int main(int argc, char *argv[]){
 								DivVectors(u,v,w);
 							break;
 							default:
-								printf("Unknown Operation");
+								printf("Unknown Operation\n");
 								exit(0);
 							}
 						PrintVector(w);
 					}
 
-			else { //aritmetic operations
-					sscanf(Operation, "%lf%c%lf", &val1, &oper, &val2);
+			else if(strncmp(Operation, "(", 1)== 0){ //aritmetic operations
+					sscanf(Operation, "%c%lf%c%lf%c", &trash[0], &val1, &oper, &val2, &trash[1]);
 					switch (oper) {
 						case '+':
 							result = algeb_sum(val1, val2);
@@ -139,6 +142,9 @@ int main(int argc, char *argv[]){
 					}
 					printf("= (result) %lf\n", result);
 				}
+			else{
+				printf("Operation not recognized\n");
+			}
 			}while(Operation[0] != 's');
 		return 0;
 }
