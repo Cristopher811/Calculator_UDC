@@ -50,7 +50,7 @@ double algeb_square(double b, double x){
         do
         {
             result += step;
-            y = algeb_square(result, x);
+            y = algeb_power(result, x);
         } 
         while (y<b);
 
