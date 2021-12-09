@@ -5,6 +5,7 @@
 #include "src/algebra.h"
 #include "src/vectors.h"
 #include "src/trigonometrics.h"
+#include "src/functions.h"
 
 int main(int argc, char *argv[]){
 	//initialize general variables
@@ -76,8 +77,15 @@ int main(int argc, char *argv[]){
 			}
 
 			else if(Operation[0] == ':'){
-					sscanf(Operation, "%c%c%c%c%lf%c", &trash[0],&trash[1],&trash[2],&trash[3], &val1, &trash[4]);
-					//some trigonometric stuff
+					sscanf(Operation, "%c%c%c%c%c%lf%c", &trash[0],&trash[1],&trash[2],&trash[3], &trash[4], &val1, &trash[5]);
+					if(strncmp(Operation, ":lna", 4) == 0){
+						result = ln(val1);
+						printf("=(result) %lf\n", result);
+					}
+					if(strncmp(Operation, ":log", 4) == 0){
+						result = loga(val1);
+						printf("=(result) %lf\n", result);
+					}
 				}
 			
 			else if(Operation[0] == '['){ //--> vector operations
