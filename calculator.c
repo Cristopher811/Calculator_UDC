@@ -8,18 +8,6 @@
 #include "src/trigonometrics.h"
 #include "src/functions.h"
 
-/* int is_number(char n[100]){
-	int j = 0;
-	int is_digit = 0;
-
-	while (j<strlen(n)){
-		is_digit = isdigit(n[j]);
-		if (is_digit == 0) break;
-		j++;
-	}
-	return 0;
-}*/
-
 int main(int argc, char *argv[]){
 	//initialize general variables
 	double val1, val2, result, ans;
@@ -80,21 +68,32 @@ int main(int argc, char *argv[]){
 						switch (oper){
 							case '+':
 								SumVectors(wans,v,w);
+								result = SEVectors(w);
+								printf("= %lf\n", result);
 							break;
 							case '-':
 								SusVectors(wans,v,w);
+								result = SEVectors(w);
+								printf("= %lf\n", result);
 							break;
 							case '*':
 								ProVectors(wans,v,w);
+								result = SEVectors(w);
+								printf("= %lf\n", result);
 							break;
 							case '/':
 								DivVectors(wans,v,w);
+								result = SEVectors(w);
+								printf("= %lf\n", result);
+							break;
+							case 'X':
+								CrossPro(u, v, w);
+								PrintVector(w);
 							break;
 							default:
 								printf("Unknown Operation\n");
 							break;
 							}
-						PrintVector(w);
 					}
 
 					else if (Operation[0] == ':'){
@@ -121,21 +120,32 @@ int main(int argc, char *argv[]){
 						switch (oper) {	
 							case '+':
 								SumVectors(u,v,w);
+								result = SEVectors(w);
+								printf("= %lf\n", result);
 							break;
 							case '-':
 								SusVectors(u,v,w);
+								result = SEVectors(w);
+								printf("= %lf\n", result);
 							break;
 							case '*':
 								ProVectors(u,v,w);
+								result = SEVectors(w);
+								printf("= %lf\n", result);
 							break;
 							case '/':
 								DivVectors(u,v,w);
+								result = SEVectors(w);
+								printf("= %lf\n", result);
+							break;
+							case 'X':
+								CrossPro(u, v, w);
+								PrintVector(w);
 							break;
 							default:
 								printf("Unknown Operation\n");
-								exit(0);
+							break;
 							}
-						PrintVector(w);
 					}
 
 					else if(Operation[0] >= '0' && Operation[0] <= '9' || Operation[0] == '-'){
