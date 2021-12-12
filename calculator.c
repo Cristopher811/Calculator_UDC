@@ -19,7 +19,8 @@ int main(int argc, char *argv[]){
 	float v[3];
 	float w[3];
 	float wans[3];
-
+	
+	printf("\nWelcome, if you don't know where to start, type help\n");
 		do{
 			copiArray(w, wans);
 			ans = result;
@@ -31,10 +32,10 @@ int main(int argc, char *argv[]){
 			}
 
 			else if(strcmp(Operation, "help") == 0){
-				
 				while (fgets(line, sizeof(line), help)){
 					printf("%s", line);
 				}
+				fclose(help);
 			}
 
 			else if(strncmp(Operation, "ans", 3) == 0 || strncmp(Operation, "vans", 4) == 0 || Operation[0] == ':' || Operation[0] == 
@@ -166,7 +167,7 @@ int main(int argc, char *argv[]){
 								result = SEVectors(w);
 								printf("\n= %lf\n", result);
 							break;
-							case 'X':
+							case 'x':
 								CrossPro(u, v, w);
 								PrintVector(w);
 							break;
