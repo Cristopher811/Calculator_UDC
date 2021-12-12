@@ -26,15 +26,19 @@ int main(int argc, char *argv[]){
 			printf("\nEnter operation: ");
 			scanf("%s", &Operation[0]);
 
-			if(strcmp(Operation, "help") == 0){
+			if(strcmp(Operation, "clear") == 0){
+				system("clear");
+			}
+
+			else if(strcmp(Operation, "help") == 0){
 				
 				while (fgets(line, sizeof(line), help)){
 					printf("%s", line);
 				}
 			}
 
-			else if(strncmp(Operation, "ans", 3) == 0 || strncmp(Operation, "vans", 4) == 0 || Operation[0] == ':' || Operation[0] == '[' 
-					|| (Operation[0] >= '0' && Operation[0] <= '9' || Operation[0] == '-')){
+			else if(strncmp(Operation, "ans", 3) == 0 || strncmp(Operation, "vans", 4) == 0 || Operation[0] == ':' || Operation[0] == 
+							'[' || (Operation[0] >= '0' && Operation[0] <= '9' || Operation[0] == '-')){
 					
 					if (strncmp(Operation, "ans", 3) == 0){
 						sscanf(Operation, "%c%c%c%c%lf", &trash[0],&trash[1],&trash[2], &oper, &val2);
@@ -66,8 +70,8 @@ int main(int argc, char *argv[]){
 					}
 
 					else if(strncmp(Operation, "vans", 4) == 0){
-						sscanf(Operation,"%c%c%c%c%c%c%f%c%f%c%f%c",&trash[0],&trash[1],&trash[2],&trash[3],&oper,&trash[4], &v[0],&trash[5],&v[1],&trash[6],
-										&v[2],&trash[7]);
+						sscanf(Operation,"%c%c%c%c%c%c%f%c%f%c%f%c",&trash[0],&trash[1],&trash[2],&trash[3],&oper,&trash[4], &v[0],&trash[5],
+										&v[1],&trash[6],&v[2],&trash[7]);
 
 						switch (oper){
 							case '+':
@@ -138,14 +142,14 @@ int main(int argc, char *argv[]){
 					}
 
 					else if(Operation[0] == '['){
-						sscanf(Operation,"%c%f%c%f%c%f%c%c%c%f%c%f%c%f%c",&trash[0],&u[0],&trash[1],&u[1],&trash[2],&u[2],&trash[3],&oper,&trash[5],
-										&v[0],&trash[6],&v[1],&trash[7],&v[2],&trash[8]);
+						sscanf(Operation,"%c%f%c%f%c%f%c%c%c%f%c%f%c%f%c",&trash[0],&u[0],&trash[1],&u[1],&trash[2],&u[2],&trash[3],&oper,
+								&trash[5], &v[0],&trash[6],&v[1],&trash[7],&v[2],&trash[8]);
 
 						switch (oper) {	
 							case '+':
 								SumVectors(u,v,w);
 								result = SEVectors(w);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							break;
 							case '-':
 								SusVectors(u,v,w);
