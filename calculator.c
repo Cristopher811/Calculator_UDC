@@ -108,12 +108,32 @@ int main(int argc, char *argv[]){
 								printf("\n= %lf\n", result);
 							}
 
+							else if(strncmp(Operation, ":sin", 4) == 0){
+								result = sine(val1);
+								printf("\n= %lf\n", result);
+							}
+
+							else if (strncmp(Operation, ":cos", 4) == 0){
+								result = cosine(val1);
+								printf("\n= %lf\n", result);
+							}
+
+							else if(strncmp(Operation, ":tan", 4) == 0){
+								result= tan(val1); 
+								printf("\n= %lf\n", result);
+							}
+
+							else if(strncmp(Operation, ":act", 4) == 0){
+								result = arctan(val1);
+								printf("\n= %lf\n", result);
+							}
+
 							else if(strncmp(Operation, ":log", 4) == 0){
 								result = loga(val1);
 								printf("\n= %lf\n", result);
 							}
 							else {
-								printf("\nOperation not recognized...ttt\n");
+								printf("\nOperation not recognized...\n");
 						}
 					}
 
