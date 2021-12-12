@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include "calculator.h"
 #include "src/algebra.h"
 #include "src/vectors.h"
@@ -9,6 +8,8 @@
 #include "src/functions.h"
 
 int main(int argc, char *argv[]){
+	FILE * help = fopen("help.txt", "r");
+	char line[200];
 	//initialize general variables
 	double val1, val2, result, ans;
 	char oper;
@@ -22,11 +23,14 @@ int main(int argc, char *argv[]){
 		do{
 			copiArray(w, wans);
 			ans = result;
-			printf("Enter operation: ");
+			printf("\nEnter operation: ");
 			scanf("%s", &Operation[0]);
 
 			if(strcmp(Operation, "help") == 0){
-				printf("help\n");
+				
+				while (fgets(line, sizeof(line), help)){
+					printf("%s", line);
+				}
 			}
 
 			else if(strncmp(Operation, "ans", 3) == 0 || strncmp(Operation, "vans", 4) == 0 || Operation[0] == ':' || Operation[0] == '[' 
@@ -55,10 +59,10 @@ int main(int argc, char *argv[]){
 								result = algeb_square(ans, val2);
 							break;
 							default:
-								printf("Operation not recognized, type help to view sintax...\n");
+								printf("\nOperation not recognized, type help to view syntax...\n");
 							break;
 						}
-						printf("= %lf\n", result);
+						printf("\n= %lf\n", result);
 					}
 
 					else if(strncmp(Operation, "vans", 4) == 0){
@@ -69,29 +73,29 @@ int main(int argc, char *argv[]){
 							case '+':
 								SumVectors(wans,v,w);
 								result = SEVectors(w);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							break;
 							case '-':
 								SusVectors(wans,v,w);
 								result = SEVectors(w);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							break;
 							case '*':
 								ProVectors(wans,v,w);
 								result = SEVectors(w);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							break;
 							case '/':
 								DivVectors(wans,v,w);
 								result = SEVectors(w);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							break;
 							case 'X':
 								CrossPro(u, v, w);
 								PrintVector(w);
 							break;
 							default:
-								printf("Unknown Operation\n");
+								printf("\nUnknown Operation...\n");
 							break;
 							}
 					}
@@ -99,17 +103,17 @@ int main(int argc, char *argv[]){
 					else if (Operation[0] == ':'){
 						sscanf(Operation, "%c%c%c%c%c%lf%c", &trash[0],&trash[1],&trash[2],&trash[3], &trash[4], &val1, &trash[5]);
 
-							if(strncmp(Operation, ":lna", 4) == 0){
+							if(strncmp(Operation, ":lgn", 4) == 0){
 								result = ln(val1);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							}
 
-							if(strncmp(Operation, ":log", 4) == 0){
+							else if(strncmp(Operation, ":log", 4) == 0){
 								result = loga(val1);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							}
 							else {
-								printf("Operation not recognized...\n");
+								printf("\nOperation not recognized...ttt\n");
 						}
 					}
 
@@ -126,24 +130,24 @@ int main(int argc, char *argv[]){
 							case '-':
 								SusVectors(u,v,w);
 								result = SEVectors(w);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							break;
 							case '*':
 								ProVectors(u,v,w);
 								result = SEVectors(w);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							break;
 							case '/':
 								DivVectors(u,v,w);
 								result = SEVectors(w);
-								printf("= %lf\n", result);
+								printf("\n= %lf\n", result);
 							break;
 							case 'X':
 								CrossPro(u, v, w);
 								PrintVector(w);
 							break;
 							default:
-								printf("Unknown Operation\n");
+								printf("\nUnknown Operation...\n");
 							break;
 							}
 					}
@@ -171,14 +175,17 @@ int main(int argc, char *argv[]){
 								result = algeb_square(val1, val2);
 							break;
 							default:
-								printf("Operation not regonized, type help to view sintax...\n");
+								printf("\nOperation not regonized, type help to view sintax...\n");
 							break;
 						}
-						printf("= (result) %lf\n", result);
+						printf("\n= (result) %lf\n", result);
 					}
 			}
+			else if(strncmp(Operation, "s", 1) == 0){
+				printf("\nSee you soon...\n");
+			}
 			else{
-				printf("Operation not recognized, type help to view syntax...\n");
+				printf("\nOperation not recognized, type help to view syntax...\n");
 			}
 		}while(Operation[0] != 's');
 		return 0;
