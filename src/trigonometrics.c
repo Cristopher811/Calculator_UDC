@@ -71,3 +71,18 @@ double arctan(double x){ //valores de x, |x|<1
     }
     return result;
 }
+double csc(double x){
+    double result;
+    result = 1/sine(x);
+    return result;
+}
+double sec(double x){
+    double result;
+    result = 1/cosine(x);
+    return result;
+}
+double cot(double x){
+    double result;
+    result = 1/tan(x);
+    return result;
+}
