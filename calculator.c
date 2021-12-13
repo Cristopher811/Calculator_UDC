@@ -127,7 +127,7 @@ int main(int argc, char *argv[]){
 								printf("\n= %lf\n", result);
 							}
 
-							else if(strncmp(Operation, ":arct", 5) == 0){
+							else if(strncmp(Operation, ":actg", 5) == 0){
 								result = arctan(val1);
 								printf("\n= %lf\n", result);
 							}

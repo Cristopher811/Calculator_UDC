@@ -11,7 +11,7 @@ Aritemtic functions:
  Division: x/y  where x and y are real numbers.
  Power: x^y  where x and y are real numbers.
  Root: x|y  where x and y are real numbers -> (radicand|index).
- Decimal log: :log(x) where x is a real number.
+ Decimal log: :logd(x) where x is a real number.
  Natural log: :logn(x) where x is a real number.
 
 Vector algebra:
@@ -22,13 +22,18 @@ Vector algebra:
  Vectorial division: [x,y,z]/[x,y,z] where x, y and z are real numbers.
 
 Trigonometric functions:
- Sine: :sin(x) where x is a real number.
- Cosine: :cos(x) where x is a real number.
- Tan: :tan(x) where x is a real number.
- Arctan: :act(x) where x is a real number.
- Csc: :csc(x) where x is a real number.
- Sec: :sec(x) where x is a real number.
- Cot: :cot(x) where x is a real number.
+ Sine: :sine(x) where x is a real number.
+ Cosine: :cosi(x) where x is a real number.
+ Tan: :tang(x) where x is a real number.
+ Arctan: :actg(x) where x is a real number.
+ Csc: :csct(x) where x is a real number.
+ Sec: :sect(x) where x is a real number.
+ Cotg: :cotg(x) where x is a real number.
+ Arcsin: :acsi(x) where x is a real number.
+ Arccos: :acos(x) where x is a real number.
+ Arcsec: :asec(x) where x is a real number.
+ Arccsc: :acsc(x) where x is a real number.
+ Arccot: :acct(x) where x is a real number.
 
 To operate with an aritmetic answer saved in memory, type: ans+x where x is a real number.
 To operate with a vector answer saved in memory, type: ans+x where x is a real number or
