@@ -115,3 +115,12 @@ double algeb_square(double b, double x){
     }
     return result;
 }
+int Factorial(int x){
+	int n, factorial=1;
+	for(n=0; n<=x; n++){
+		if(n!=0){
+			factorial*=n;
+		}
+	}
+	return factorial;
+}

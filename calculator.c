@@ -105,49 +105,74 @@ int main(int argc, char *argv[]){
 					}
 
 					else if (Operation[0] == ':'){
-						sscanf(Operation, "%c%c%c%c%c%lf%c", &trash[0],&trash[1],&trash[2],&trash[3], &trash[4], &val1, &trash[5]);
+						sscanf(Operation, "%c%c%c%c%c%c%lf%c", &trash[0], &trash[1], &trash[2],&trash[3],&trash[4], &trash[5], &val1, &trash[6]);
 
-							if(strncmp(Operation, ":lgn", 4) == 0){
+							if(strncmp(Operation, ":logn", 5) == 0){
 								result = ln(val1);
 								printf("\n= %lf\n", result);
 							}
 
-							else if(strncmp(Operation, ":sin", 4) == 0){
+							else if(strncmp(Operation, ":sine", 5) == 0){
 								result = sine(val1);
 								printf("\n= %lf\n", result);
 							}
 
-							else if (strncmp(Operation, ":cos", 4) == 0){
+							else if (strncmp(Operation, ":cosi", 5) == 0){
 								result = cosine(val1);
 								printf("\n= %lf\n", result);
 							}
 
-							else if(strncmp(Operation, ":tan", 4) == 0){
+							else if(strncmp(Operation, ":tang", 5) == 0){
 								result= tan(val1); 
 								printf("\n= %lf\n", result);
 							}
 
-							else if(strncmp(Operation, ":act", 4) == 0){
+							else if(strncmp(Operation, ":arct", 5) == 0){
 								result = arctan(val1);
 								printf("\n= %lf\n", result);
 							}
 
-							else if(strncmp(Operation, ":csc", 4) == 0){
+							else if(strncmp(Operation, ":csct", 5) == 0){
 								result = csc(val1);
 								printf("\n= %lf\n", result);
 							}
 
-							else if(strncmp(Operation, ":sec", 4) == 0){
+							else if(strncmp(Operation, ":sect", 5) == 0){
 								result = sec(val1);
 								printf("\n= %lf\n", result);
 							}
 
-							else if(strncmp(Operation, ":cot", 4) == 0){
+							else if(strncmp(Operation, ":cotg", 5) == 0){
 								result = cot(val1);
 								printf("\n= %lf\n", result);
 							}
 
-							else if(strncmp(Operation, ":log", 4) == 0){
+							else if(strncmp(Operation, ":acsi", 5) == 0){
+								result = arcsine(val1);
+								printf("\n= %lf\n", result);
+							}
+
+							else if(strncmp(Operation, ":acos", 5) == 0){
+								result = arccos(val1);
+								printf("\n= %lf\n", result);
+							}
+
+							else if(strncmp(Operation, ":asec", 5) == 0){
+								result = arcsec(val1);
+								printf("\n= %lf\n", result);
+							}
+
+							else if(strncmp(Operation, ":acsc", 5) == 0){
+								result = arccsc(val1);
+								printf("\n= %lf\n", result);
+							}
+
+							else if(strncmp(Operation, ":acct", 5) == 0){
+								result = arccot(val1);
+								printf("\n= %lf\n", result);
+							}
+
+							else if(strncmp(Operation, ":logd", 5) == 0){
 								result = loga(val1);
 								printf("\n= %lf\n", result);
 							}
