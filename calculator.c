@@ -133,6 +133,21 @@ int main(int argc, char *argv[]){
 								printf("\n= %lf\n", result);
 							}
 
+							else if(strncmp(Operation, ":csc", 4) == 0){
+								result = csc(val1);
+								printf("\n= %lf\n", result);
+							}
+
+							else if(strncmp(Operation, ":sec", 4) == 0){
+								result = sec(val1);
+								printf("\n= %lf\n", result);
+							}
+
+							else if(strncmp(Operation, ":cot", 4) == 0){
+								result = cot(val1);
+								printf("\n= %lf\n", result);
+							}
+
 							else if(strncmp(Operation, ":log", 4) == 0){
 								result = loga(val1);
 								printf("\n= %lf\n", result);
