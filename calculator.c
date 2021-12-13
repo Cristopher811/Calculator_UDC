@@ -29,6 +29,7 @@ int main(int argc, char *argv[]){
 
 			if(strcmp(Operation, "clear") == 0){
 				system("clear");
+				system("cls");
 			}
 
 			else if(strcmp(Operation, "help") == 0){

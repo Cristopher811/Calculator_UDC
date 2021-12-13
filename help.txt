@@ -37,7 +37,9 @@ Trigonometric functions:
 
 To operate with an aritmetic answer saved in memory, type: ans+x where x is a real number.
 To operate with a vector answer saved in memory, type: ans+x where x is a real number or
-Also you can type: vans+[x,y,z] if the previews answer corresponds to a cross product.
+Also you can type: vans+[x,y,z] if the previous answer corresponds to a cross product.
+
+There will probably be some margin of error in some values of the arc trigonometric functions, we will work on it.
 																												
 Type 's' to exit.
 Type 'clear' to clean the screen.
