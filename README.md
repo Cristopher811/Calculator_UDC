@@ -1,13 +1,3 @@
 ## Calculator_UDC
 
-**Requerimientos de la calculadora**
-
-- [x] Suma, resta, multiplicación y división de números reales.
-- [x] Potencias con base y exponentes reales, o sea, y^x, donde tanto y como x son reales. -> Ian
-- [x] Logaritmo con base 10 y e para cualquier argumento real. -> Ian
-- [	] Funciones trigonométricas faltantes (sin(Fer), cos(Fer), tan(Fer), cot(Ian), sec(Ian), csc(Ian), acot(Lua), asec(Cris), asen(Lua), acos(Cris), atan(Lua)). 
-- [ ] Operaciones con vectores.
-- [x] Guardar en memoria el resultado. -> Cris
-- [x] Perfeccionar el código en general 
-- [ ] Ayuda para el usuario. -> Cris
-- [x] Implementar multiples operaciones hasta que se detenga el programa.
+To compile this program run the command 'make', it would be easier.
