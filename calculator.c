@@ -43,7 +43,6 @@ int main(int argc, char *argv[]){
 					
 					if (strncmp(Operation, "ans", 3) == 0){
 						sscanf(Operation, "%c%c%c%c%lf", &trash[0],&trash[1],&trash[2], &oper, &val2);
-						
 						switch (oper){
 							case '+':
 								result = algeb_sum(ans, val2);
@@ -95,7 +94,7 @@ int main(int argc, char *argv[]){
 								result = SEVectors(w);
 								printf("\n= %lf\n", result);
 							break;
-							case 'X':
+							case 'x':
 								CrossPro(u, v, w);
 								PrintVector(w);
 							break;
