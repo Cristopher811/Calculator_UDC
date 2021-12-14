@@ -40,7 +40,7 @@ int main(int argc, char *argv[]){
 				while (fgets(line, sizeof(line), help)){
 					printf("%s", line);
 				}
-				fclose(help);
+				rewind(help);
 			}
 
 			else if(strncmp(Operation, "ans", 3) == 0 || strncmp(Operation, "vans", 4) == 0 || Operation[0] == ':' || Operation[0] == 
