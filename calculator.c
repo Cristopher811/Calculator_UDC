@@ -28,8 +28,12 @@ int main(int argc, char *argv[]){
 			scanf("%s", &Operation[0]);
 
 			if(strcmp(Operation, "clear") == 0){
+#ifdef __unix__
 				system("clear");
+#endif
+#ifdef __WIN32__
 				system("cls");
+#endif
 			}
 
 			else if(strcmp(Operation, "help") == 0){
